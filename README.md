@@ -96,10 +96,22 @@ desde la cuenta de un integrante.
 
 | Integrante | Rol en el proyecto | Responsabilidades |
 |---|---|---|
-| Alex | Líder de producto y diseño | Definición de la app, diseño en Figma, paleta y experiencia de usuario, revisión final |
+| Alex | Líder de producto | Definición de la app, experiencia de usuario, integración y revisión final |
 | Liam | Arquitectura y datos | Estructura del proyecto, base de datos Room, modelo entidad-relación, repositorios |
-| Jesús | Desarrollo de interfaz | Pantallas en Compose: login, registro, lista de metas y formulario |
-| Daniel | Calidad y documentación | Validaciones, pruebas unitarias, integración continua y README |
+| Daniel | Interfaz y diseño de UI | Diseño visual y animaciones del personaje Nopalito en Rive, estilo de las pantallas |
+| Jesús | Pruebas de calidad | Pruebas de la app, detección y reporte de errores, verificación de los flujos |
+
+### Por qué no todos aparecen como autores de commits
+
+Todo el equipo trabajó, pero los commits se hicieron desde **dos cuentas: la de Liam y la de
+Alex**. Así se reparte el trabajo:
+
+- **Daniel** hizo los diseños y animaciones de Nopalito en Rive. **Alex** los integró a la app
+  desde su cuenta.
+- **Jesús** hizo el testing de la app. **Liam** corrigió y reportó desde su cuenta los errores
+  que Jesús encontró.
+- En esta versión móvil también se usó un asistente de IA (Claude) como apoyo de desarrollo, y
+  así lo registra el historial de git.
 
 ## Cómo se entrega
 
