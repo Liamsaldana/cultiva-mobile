@@ -73,11 +73,28 @@ de la conversión de montos y del escape de la búsqueda. GitHub Actions
 (`.github/workflows/android.yml`) corre las pruebas y compila el APK en cada push; el APK
 queda como artefacto del run.
 
+## Repositorio original y equipo
+
+Esta app es una versión móvil, reducida, de **Cultiva**. El desarrollo completo vive en el
+repositorio **`Riverstargroup/Cultiva-App`**. Ese repositorio es **privado**: por una
+restricción de la empresa (Riverstar Group) no podemos dar acceso externo, ni siquiera de
+lectura. Por eso este repositorio contiene sólo la parte que se entrega para la materia.
+
+La historia de `Cultiva-App` sí registra el trabajo del equipo. Estos son los datos de la rama
+`main` al 30 de septiembre de 2026 (historia disponible desde el 6 de septiembre, 351 commits):
+
+| Autor en GitHub | Commits en `main` | Áreas en las que más trabajó |
+|---|---|---|
+| Alejandro-Trujillo-17 | 250 | Pantallas de la app (`evidence/ui`), navegación, personaje Nopalito, sondas de verificación |
+| Liamsaldana | 87 | Pantallas de la app, contenido educativo con el marco VELARA, sondas de verificación |
+| Otros (asistente de IA y cuentas secundarias) | 14 | Apoyo puntual |
+
+Si el profesor lo requiere, podemos mostrar el historial del repositorio original en persona,
+desde la cuenta de un integrante.
+
 ## Equipo
 
-<!-- Completar con los integrantes del equipo y lo que aportó cada uno. -->
-| Integrante | Aportación |
-|---|---|
-| | |
-
-Cada integrante debe subir sus propios commits con su cuenta.
+<!-- Completar con el nombre completo y la matrícula de cada integrante. -->
+| Integrante | Usuario de GitHub | Aportación a esta versión móvil |
+|---|---|---|
+| | | |
