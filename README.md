@@ -92,9 +92,17 @@ La historia de `Cultiva-App` sí registra el trabajo del equipo. Estos son los d
 Si el profesor lo requiere, podemos mostrar el historial del repositorio original en persona,
 desde la cuenta de un integrante.
 
-## Equipo
+## Equipo y roles
 
-<!-- Completar con el nombre completo y la matrícula de cada integrante. -->
-| Integrante | Usuario de GitHub | Aportación a esta versión móvil |
+| Integrante | Rol en el proyecto | Responsabilidades |
 |---|---|---|
-| | | |
+| Alex | Líder de producto y diseño | Definición de la app, diseño en Figma, paleta y experiencia de usuario, revisión final |
+| Liam | Arquitectura y datos | Estructura del proyecto, base de datos Room, modelo entidad-relación, repositorios |
+| Jesús | Desarrollo de interfaz | Pantallas en Compose: login, registro, lista de metas y formulario |
+| Daniel | Calidad y documentación | Validaciones, pruebas unitarias, integración continua y README |
+
+## Cómo se entrega
+
+El ZIP contiene el proyecto completo, incluida la carpeta `.git`: `git log` muestra el
+historial de esta versión móvil. El historial del trabajo previo del equipo está en el
+repositorio original privado (ver la sección anterior).
