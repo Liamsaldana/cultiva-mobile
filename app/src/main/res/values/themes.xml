@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tema de la ventana antes de que Compose pinte: el mismo papel crema,
+         para que no haya fogonazo blanco al abrir. -->
+    <style name="Theme.Cultiva" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/papel</item>
+        <item name="android:statusBarColor">@color/papel</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+</resources>
