@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>Modelo entidad-relación · Cultiva Mobile</title>
+<style>
+  body{margin:0;background:#FFF9F2;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#2E2A20}
+  .lienzo{width:1100px;padding:40px 48px;box-sizing:border-box}
+  h1{font-family:Georgia,serif;font-size:30px;margin:0 0 4px}
+  .sub{color:#6B6456;margin:0 0 32px;font-size:15px}
+  .fila{display:flex;align-items:center;gap:0}
+  .ent{background:#fff;border:2px solid #3C7A28;border-radius:14px;overflow:hidden;width:380px;box-shadow:0 6px 18px rgba(60,122,40,.12)}
+  .ent h2{margin:0;background:#3C7A28;color:#FFF9F2;font-size:18px;padding:12px 16px;letter-spacing:.5px}
+  .ent h2 small{font-weight:400;opacity:.85;font-size:13px;margin-left:6px}
+  table{border-collapse:collapse;width:100%;font-size:14px}
+  td{padding:8px 16px;border-top:1px solid #F1E6D6}
+  td.k{width:52px;font-weight:700;color:#5C1530;font-size:12px}
+  td.t{color:#6B6456;text-align:right;font-family:ui-monospace,Menlo,monospace;font-size:12.5px}
+  .rel{flex:1;position:relative;height:120px}
+  .rel svg{position:absolute;inset:0}
+  .rel .et{position:absolute;left:0;right:0;top:18px;text-align:center;font-size:14px;color:#2E2A20}
+  .notas{margin-top:32px;font-size:14px;color:#6B6456;line-height:1.55}
+  .notas b{color:#2E2A20}
+</style></head><body><div class="lienzo">
+<h1>Modelo entidad-relación</h1>
+<p class="sub">Base de datos local Room (SQLite) · archivo <code>cultiva.db</code> · versión 1</p>
+<div class="fila">
+  <div class="ent">
+    <h2>usuarios <small>UsuarioEntity</small></h2>
+    <table>
+      <tr><td class="k">PK</td><td>id</td><td class="t">INTEGER autoinc</td></tr>
+      <tr><td class="k"></td><td>nombre</td><td class="t">TEXT not null</td></tr>
+      <tr><td class="k">UQ</td><td>correo</td><td class="t">TEXT not null, único</td></tr>
+      <tr><td class="k"></td><td>hash_contrasena</td><td class="t">TEXT (PBKDF2)</td></tr>
+      <tr><td class="k"></td><td>sal</td><td class="t">TEXT</td></tr>
+      <tr><td class="k"></td><td>creado_en</td><td class="t">INTEGER (epoch ms)</td></tr>
+    </table>
+  </div>
+  <div class="rel">
+    <div class="et">tiene · <b>1 : N</b></div>
+    <svg viewBox="0 0 200 120" preserveAspectRatio="none">
+      <line x1="0" y1="60" x2="200" y2="60" stroke="#3C7A28" stroke-width="2.5"/>
+      <line x1="14" y1="48" x2="14" y2="72" stroke="#3C7A28" stroke-width="2.5"/>
+      <line x1="22" y1="48" x2="22" y2="72" stroke="#3C7A28" stroke-width="2.5"/>
+      <line x1="200" y1="60" x2="182" y2="46" stroke="#3C7A28" stroke-width="2.5"/>
+      <line x1="200" y1="60" x2="182" y2="74" stroke="#3C7A28" stroke-width="2.5"/>
+      <line x1="178" y1="46" x2="178" y2="74" stroke="#3C7A28" stroke-width="2.5"/>
+    </svg>
+  </div>
+  <div class="ent">
+    <h2>metas <small>MetaEntity</small></h2>
+    <table>
+      <tr><td class="k">PK</td><td>id</td><td class="t">INTEGER autoinc</td></tr>
+      <tr><td class="k">FK</td><td>usuario_id → usuarios.id</td><td class="t">INTEGER, CASCADE</td></tr>
+      <tr><td class="k"></td><td>nombre</td><td class="t">TEXT not null</td></tr>
+      <tr><td class="k"></td><td>categoria</td><td class="t">TEXT (enum)</td></tr>
+      <tr><td class="k"></td><td>monto_objetivo</td><td class="t">INTEGER (centavos)</td></tr>
+      <tr><td class="k"></td><td>monto_ahorrado</td><td class="t">INTEGER (centavos)</td></tr>
+      <tr><td class="k"></td><td>nota</td><td class="t">TEXT</td></tr>
+      <tr><td class="k"></td><td>creada_en</td><td class="t">INTEGER (epoch ms)</td></tr>
+      <tr><td class="k"></td><td>actualizada_en</td><td class="t">INTEGER (epoch ms)</td></tr>
+    </table>
+  </div>
+</div>
+<div class="notas">
+  <b>Un usuario tiene cero o muchas metas; cada meta pertenece a exactamente un usuario.</b><br>
+  Al borrar un usuario se borran sus metas (<code>ON DELETE CASCADE</code>). Índices: <code>usuarios.correo</code> (único) y <code>metas.usuario_id</code>.<br>
+  <code>categoria</code> guarda el nombre del enum: AHORRO, DEUDA, EMERGENCIA, COMPRA, EDUCACION u OTRA.
+  La contraseña nunca se guarda: sólo su hash PBKDF2-SHA256 y una sal aleatoria por usuario.
+  Los montos van en centavos enteros para que las sumas sean exactas.
+</div>
+</div></body></html>
